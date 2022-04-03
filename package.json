@@ -1,0 +1,36 @@
+{
+  "name": "use-rxjs-state",
+  "version": "1.0.1",
+  "description": "Hooks for rxjs",
+  "types": "lib/useRxjs.d.ts",
+  "main": "lib/useRxjs.js",
+  "scripts": {
+    "build": "rm -rf ./lib && mkdir lib && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylor-ben/useRxjs.git"
+  },
+  "keywords": [
+    "rxjs",
+    "react",
+    "hooks"
+  ],
+  "author": "Taylor Ben",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taylor-ben/useRxjs/issues"
+  },
+  "homepage": "https://github.com/taylor-ben/useRxjs#readme",
+  "dependencies": {
+    "rxjs": "^7.5.5"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.43",
+    "typescript": "^4.6.3"
+  },
+  "files": ["lib"]
+}
