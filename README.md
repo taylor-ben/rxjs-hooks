@@ -7,7 +7,7 @@ yarn add use-rxjs-state
 
 ### Usage example
 ```tsx
-import { clicking, openess } from "./store"
+import { click$, open$ } from "./store"
 import { useBehaviorSubject, useSubject } from "use-rxjs-state"
 
 export default function App() {
@@ -20,8 +20,8 @@ export default function App() {
 }
 
 const Hello = () => {
-  const fireClick = useSubject(clicking)
-  const [ open, setOpen ] = useBehaviorSubject(openess)
+  const fireClick = useSubject(click$)
+  const [ open, setOpen ] = useBehaviorSubject(open$)
   return (
     <div>
       <button onClick={() => fireClick('Tell everyone I was clicked!')}>Click me</button>
@@ -33,10 +33,10 @@ const Hello = () => {
 }
 
 const World = () => {
-  useSubject(clicking, message => {
+  useSubject(click$, message => {
     console.log('message:', message)
   })
-  const [ open ] = useBehaviorSubject(openess)
+  const [ open ] = useBehaviorSubject(open$)
   return (
     <div>
       <div>Is open: {open ? 'true' : 'false'}</div>
@@ -49,7 +49,7 @@ const World = () => {
 ```ts
 import { BehaviorSubject, Subject } from "rxjs"
 
-export const clicking = new Subject()
+export const click$ = new Subject()
 
-export const openess = new BehaviorSubject(false)
+export const open$ = new BehaviorSubject(false)
 ```
