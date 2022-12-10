@@ -6,7 +6,7 @@ export const useBehaviorSubject = <T>(behaviorSubject: BehaviorSubject<T>): [T, 
   useEffect(() => {
     const subscription = behaviorSubject.subscribe(value => setCurrentState(value))
     return () => subscription.unsubscribe()
-  }, [])
+  }, [behaviorSubject])
   const setState = (value: T) => behaviorSubject.next(value)
   return [currentState, setState]
 }
@@ -15,7 +15,7 @@ export const useSubject = <T>(subject: Subject<T>, eventReaction?: (value: T) =>
   useEffect(() => {
     const subscription = subject.subscribe(value => eventReaction?.(value))
     return () => subscription.unsubscribe()
-  }, [])
+  }, [subject])
   const fireEvent = (value: T) => subject.next(value)
   return fireEvent
 }
