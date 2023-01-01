@@ -1,6 +1,6 @@
 # @taylored/rxjs-hooks
 
-This npm package provides easy-to-use React hooks for working with RxJS subjects and behavior subjects.
+This npm package provides easy-to-use hooks for working with RxJS subjects and behavior subjects.
 
 ## Installation
 
@@ -12,7 +12,7 @@ npm install @taylored/rxjs-hooks
 
 ## Usage
 
-To use this package, simply import the hooks you need into your React component:
+To use this package, simply import the hooks you need into your component:
 
 ```tsx
 import { useSubject, useBehaviorSubject } from "@taylored/rxjs-hooks";
