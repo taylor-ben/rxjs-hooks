@@ -1,55 +1,86 @@
-### Install
+# @taylored/rxjs-hooks
+
+This npm package provides easy-to-use React hooks for working with RxJS subjects and behavior subjects.
+
+## Installation
+
+To install this package, run the following command:
+
 ```bash
-npm i use-rxjs-state
-yarn add use-rxjs-state
+npm install @taylored/rxjs-hooks
 ```
 
+## Usage
 
-### Usage example
+To use this package, simply import the hooks you need into your React component:
+
 ```tsx
-import { click$, open$ } from "./store"
-import { useBehaviorSubject, useSubject } from "use-rxjs-state"
+import { useSubject, useBehaviorSubject } from "@taylored/rxjs-hooks";
+```
 
-export default function App() {
+## useSubject
+
+The `useSubject` hook allows you to subscribe to an existing subject and fire events to all subscribers. It takes two inputs: the subject to subscribe to, and a callback function that will be fired on each event. It does not have a current value, but it does return a function to fire new events to all subscribers.
+
+Here's an example of how to use it:
+
+```tsx
+import { useSubject } from "@taylored/rxjs-hooks";
+
+const mySubject = new Subject();
+
+function MyComponent() {
+  const fireNextEvent = useSubject(mySubject, (event) => {
+    console.log(event);
+  });
+
+  function handleClick() {
+    fireNextEvent("Hello, world!");
+  }
+
   return (
     <div>
-      <Hello/>
-      <World/>
+      <button onClick={handleClick}>Emit Event</button>
     </div>
-  )
-}
-
-const Hello = () => {
-  const fireClick = useSubject(click$)
-  const [ open, setOpen ] = useBehaviorSubject(open$)
-  return (
-    <div>
-      <button onClick={() => fireClick('Tell everyone I was clicked!')}>Click me</button>
-      <div>
-      <button onClick={() => setOpen(!open)}>open hamburger</button>
-      </div>
-    </div>
-  )
-}
-
-const World = () => {
-  useSubject(click$, message => {
-    console.log('message:', message)
-  })
-  const [ open ] = useBehaviorSubject(open$)
-  return (
-    <div>
-      <div>Is open: {open ? 'true' : 'false'}</div>
-    </div>
-  )
+  );
 }
 ```
 
-`./store.ts`
-```ts
-import { BehaviorSubject, Subject } from "rxjs"
+## useBehaviorSubject
 
-export const click$ = new Subject()
+The useBehaviorSubject hook allows you to subscribe to an existing behavior subject and maintain a current state. It takes two inputs: the behavior subject to subscribe to, and a callback function that will be fired on each event. It returns the current value of the behavior subject, as well as a function to update the current value.
 
-export const open$ = new BehaviorSubject(false)
+Here's an example of how to use it:
+
+```tsx
+import { useBehaviorSubject } from "@taylored/rxjs-hooks";
+
+const myBehaviorSubject = new BehaviorSubject("initial value");
+
+function MyComponent() {
+  const [value, setValue] = useBehaviorSubject(myBehaviorSubject, (event) => {
+    console.log(event);
+  });
+
+  function handleClick() {
+    setValue("new value");
+  }
+
+  return (
+    <div>
+      <button onClick={handleClick}>Change State</button>
+    </div>
+  );
+}
 ```
+
+## Differences Between Subjects and Behavior Subjects
+
+While both subjects and behavior subjects can be used to emit and subscribe to events, there is a key difference between the two:
+
+- **Subjects** are point-in-time events, meaning they are emitted and then immediately forgotten. They do not maintain a current state.
+- **Behavior subjects** are periods between two points, or states. They maintain a current state that can be updated and subscribed to.
+
+## License
+
+This package is licensed under the MIT License. See the [LICENSE](https://github.com/taylor-ben/rxjs-hooks/blob/main/LICENSE) file for more information.
