@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taylor-ben/useRxjsState.git"
+    "url": "git+https://github.com/taylor-ben/rxjs-hooks.git"
   },
   "keywords": [
     "rxjs",
@@ -19,9 +19,9 @@
   "author": "Taylor Ben",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/taylor-ben/useRxjsState/issues"
+    "url": "https://github.com/taylor-ben/rxjs-hooks/issues"
   },
-  "homepage": "https://github.com/taylor-ben/useRxjsState#readme",
+  "homepage": "https://github.com/taylor-ben/rxjs-hooks#readme",
   "dependencies": {
     "rxjs": "^7.5.5"
   },
