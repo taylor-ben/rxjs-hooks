@@ -1,21 +1,21 @@
-# @taylored/rxjs-hooks
+# use-rxjs-hooks
 
-This npm package provides easy-to-use hooks for working with RxJS subjects and behavior subjects.
+This npm package provides easy-to-use React hooks for working with RxJS subjects and behavior subjects.
 
 ## Installation
 
 To install this package, run the following command:
 
 ```bash
-npm install @taylored/rxjs-hooks
+npm install use-rxjs-hooks
 ```
 
 ## Usage
 
-To use this package, simply import the hooks you need into your component:
+To use this package, simply import the hooks you need into your React component:
 
 ```tsx
-import { useSubject, useBehaviorSubject } from "@taylored/rxjs-hooks";
+import { useSubject, useBehaviorSubject } from "use-rxjs-hooks";
 ```
 
 ## useSubject
@@ -25,7 +25,8 @@ The `useSubject` hook allows you to subscribe to an existing subject and fire ev
 Here's an example of how to use it:
 
 ```tsx
-import { useSubject } from "@taylored/rxjs-hooks";
+import { useSubject } from "use-rxjs-hooks";
+import { Subject } from "rxjs";
 
 const mySubject = new Subject();
 
@@ -53,7 +54,8 @@ The useBehaviorSubject hook allows you to subscribe to an existing behavior subj
 Here's an example of how to use it:
 
 ```tsx
-import { useBehaviorSubject } from "@taylored/rxjs-hooks";
+import { useBehaviorSubject } from "use-rxjs-hooks";
+import { BehaviorSubject } from "rxjs";
 
 const myBehaviorSubject = new BehaviorSubject("initial value");
 
