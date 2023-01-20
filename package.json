@@ -28,9 +28,7 @@
   },
   "homepage": "https://github.com/taylor-ben/rxjs-hooks#readme",
   "dependencies": {
-    "rxjs": "^7.5.5"
-  },
-  "peerDependencies": {
+    "rxjs": "^7.5.5",
     "react": "^17.0.2"
   },
   "devDependencies": {
