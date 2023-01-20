@@ -9,8 +9,7 @@
     "build": "tsup index.ts --format cjs,esm --dts",
     "lint": "tsc",
     "changeset": "changeset",
-    "version": "changeset version",
-    "release": "npm run build && npm publish --access public"
+    "version": "changeset version"
   },
   "repository": {
     "type": "git",
