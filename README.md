@@ -87,4 +87,4 @@ While both subjects and behavior subjects can be used to emit and subscribe to e
 
 This package is licensed under the MIT License. See the [LICENSE](https://github.com/taylor-ben/rxjs-hooks/blob/main/LICENSE) file for more information.
 
-# X1
+# X2
