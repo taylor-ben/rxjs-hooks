@@ -8,7 +8,9 @@
   "scripts": {
     "build": "tsup index.ts --format cjs,esm --dts",
     "lint": "tsc",
-    "changeset": "changeset"
+    "changeset": "changeset",
+    "version": "changeset version",
+    "publish": "npm run build && changeset publish"
   },
   "repository": {
     "type": "git",
