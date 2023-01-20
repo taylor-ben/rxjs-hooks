@@ -10,7 +10,7 @@
     "lint": "tsc",
     "changeset": "changeset",
     "version": "changeset version",
-    "publish": "npm run build && changeset publish"
+    "release": "npm run build && changeset publish"
   },
   "repository": {
     "type": "git",
