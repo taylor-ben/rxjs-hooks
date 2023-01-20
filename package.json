@@ -1,6 +1,6 @@
 {
   "name": "use-rxjs-state",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Hooks for rxjs",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
