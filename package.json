@@ -1,6 +1,6 @@
 {
   "name": "use-rxjs-state",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Hooks for rxjs",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -10,7 +10,7 @@
     "lint": "tsc",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "npm run build && npm publish"
+    "release": "npm run build && npm publish --access public"
   },
   "repository": {
     "type": "git",
