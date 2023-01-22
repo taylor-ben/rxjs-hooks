@@ -1,6 +1,6 @@
 {
   "name": "use-rxjs-hooks",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Hooks for rxjs",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -18,7 +18,13 @@
   "keywords": [
     "rxjs",
     "react",
-    "hooks"
+    "hooks",
+    "Observables",
+    "Observable",
+    "Subject",
+    "Behavior Subject",
+    "useBehaviorSubject",
+    "useSubject"
   ],
   "author": "Taylor Ben",
   "license": "MIT",
