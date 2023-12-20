@@ -1,6 +1,6 @@
 {
   "name": "use-rxjs-hooks",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Hooks for rxjs",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
